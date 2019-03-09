@@ -14,11 +14,24 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader",
+        }, {
+          loader: "css-loader",
+        }, {
+          loader: "sass-loader",
+          options: {
+            implementation: require("sass")
+          } 
+        }]
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.scss']
   },
 }
 
