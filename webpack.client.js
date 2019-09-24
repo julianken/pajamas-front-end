@@ -1,12 +1,11 @@
+const path = require('path')
+
 module.exports = {
   entry: './src/index.js',
+  watch: true,
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './dist'
   },
   module: {
     rules: [
